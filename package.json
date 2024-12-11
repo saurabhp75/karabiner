@@ -1,0 +1,26 @@
+{
+  "name": "karabiner.ts.editor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsx rules.ts",
+    "watch": "nodemon --exec npm run build -e ts"
+  },
+  "dependencies": {
+    "karabiner.ts": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "nodemon": "^3.1.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^5.0.8"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "bracketSameLine": true
+  }
+}
