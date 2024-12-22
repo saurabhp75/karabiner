@@ -58,33 +58,15 @@ let links = {
   c: 'https://claude.ai/new',
 } as Record<FromKeyParam, string>
 
-function capsQoutesHyper() {
-  return rule('Caps + Quote -> Hyper').manipulators([
-    map('⇪')
-      .toIfAlone('⇪', {}, { halt: true })
-      .toDelayedAction(toNone(), [
-        toStickyModifier('left_shift', 'toggle'),
-        toStickyModifier('left_control', 'toggle'),
-        toStickyModifier('left_option', 'toggle'),
-        toStickyModifier('left_command', 'toggle'),
-      ])
-      .toIfHeldDown('l⇧', 'l⌘⌥⌃', { halt: true }),
-    map("'")
-      .toIfAlone("'", {}, { halt: true })
-      .toDelayedAction(toKey('vk_none'), toKey("'"))
-      .toIfHeldDown('r⇧', 'r⌘⌥⌃', { halt: true })
-      .parameters({ 'basic.to_if_held_down_threshold_milliseconds': 220 }),
-  ])
-}
-
 function homeRowMod() {
-  return rule('Home row mods').manipulators([
+  return rule('Home row mods - shift, ctrl, opt, cmd').manipulators([
     //
     // Four - left hand
     mapSimultaneous(['a', 's', 'd', 'f']).toIfHeldDown('l⇧', ['l⌘⌥⌃']),
     //
     // Three - left hand
     mapSimultaneous(['a', 's', 'd']).toIfHeldDown('l⇧', ['l⌥⌃']),
+    mapSimultaneous(['a', 's', 'f']).toIfHeldDown('l⌃', ['l⌘⌥']),
     mapSimultaneous(['a', 'd', 'f']).toIfHeldDown('l⇧', ['l⌘⌥']),
     mapSimultaneous(['s', 'd', 'f']).toIfHeldDown('l⌃', ['l⌘⌥']),
     //
@@ -302,7 +284,6 @@ export const rules = () => [
   appLayer(),
   linkLayer(),
   vimLayer(),
-  capsQoutesHyper(),
 ]
 
 let code = ''
