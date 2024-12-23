@@ -1,16 +1,8 @@
 import {
-  KeyAlias,
-  LetterKeyCode,
   map,
-  mapSimultaneous,
-  ModifierKeyAlias,
-  modifierKeyAliases,
-  MultiModifierAlias,
-  multiModifierAliases,
   SideModifierAlias,
   to$,
   ToEvent,
-  toRemoveNotificationMessage,
 } from 'karabiner.ts'
 
 /** Back/Forward history in most apps. */
