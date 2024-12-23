@@ -1,1 +1,4 @@
 # My Karbiner config
+
+- Run `npm run dev` and copy config from the browser.
+- Run `npm run build` and copy config from `./karabiner.json`.
