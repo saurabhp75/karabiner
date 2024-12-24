@@ -329,12 +329,3 @@ export function vimLayer() {
     // { "'": toKey('⌫'), '\\': toKey('⌦') },
   ])
 }
-
-
-// function layer_openLink() {
-//   let links = require('./links.json') as Record<FromKeyParam, string>
-//   let layer = duoLayer('.', '/').notification('Open Link 🔗')
-//   return layer.manipulators([
-//     withMapper(links)((k, v) => map(k).to$(`open "${v}"`)),
-//   ])
-// }
