@@ -24,7 +24,7 @@ let links = {
 /** Back/Forward history in most apps. */
 export function historyNavi() {
   return [
-    map('h', '⌃').to('[', '⌘'), //
+    map('h', '⌃').to('[', '⌘'), 
     map('l', '⌃').to(']', '⌘'),
   ]
 }
@@ -32,7 +32,7 @@ export function historyNavi() {
 /** Pre/Next tab in most apps. */
 export function tabNavi() {
   return [
-    map('h', '⌥').to('[', '⌘⇧'), //
+    map('h', '⌥').to('[', '⌘⇧'), 
     map('l', '⌥').to(']', '⌘⇧'),
   ]
 }
@@ -40,7 +40,7 @@ export function tabNavi() {
 /** Pre/Next switcher in most apps. */
 export function switcher() {
   return [
-    map('h', '⌘⌥⌃').to('⇥', '⌃⇧'), //
+    map('h', '⌘⌥⌃').to('⇥', '⌃⇧'), 
     map('l', '⌘⌥⌃').to('⇥', '⌃'),
   ]
 }
@@ -121,16 +121,13 @@ end tell'`)
 
 export function homeRowMod() {
   return rule('Home row mods - shift, ctrl, opt, cmd').manipulators([
-    //
     // Four - left hand
     mapSimultaneous(['a', 's', 'd', 'f']).toIfHeldDown('l⇧', ['l⌘⌥⌃']),
-    //
     // Three - left hand
     mapSimultaneous(['a', 's', 'd']).toIfHeldDown('l⇧', ['l⌥⌃']),
     mapSimultaneous(['a', 's', 'f']).toIfHeldDown('l⌃', ['l⌘⌥']),
     mapSimultaneous(['a', 'd', 'f']).toIfHeldDown('l⇧', ['l⌘⌥']),
     mapSimultaneous(['s', 'd', 'f']).toIfHeldDown('l⌃', ['l⌘⌥']),
-    //
     // Two - left hand
     mapSimultaneous(['a', 's'], { key_down_order: 'strict' })
       .toIfAlone('a')
@@ -180,7 +177,6 @@ export function homeRowMod() {
       .toIfAlone('f')
       .toIfAlone('d')
       .toIfHeldDown('l⌥', 'l⌘'),
-    //
     // One - left hand
     map('a')
       .toIfAlone('a', {}, { halt: true })
@@ -198,16 +194,12 @@ export function homeRowMod() {
       .toIfAlone('f', {}, { halt: true })
       .toDelayedAction(toKey('vk_none'), toKey('f', {}, { halt: true }))
       .toIfHeldDown('l⌘', {}, { halt: true }),
-    //
-    //
     // Four - right hand
     mapSimultaneous(['j', 'k', 'l', ';']).toIfHeldDown('r⇧', ['r⌘⌥⌃']),
-    //
     // Three - right hand
     mapSimultaneous([';', 'l', 'k']).toIfHeldDown('r⇧', ['r⌥⌃']),
     mapSimultaneous([';', 'k', 'j']).toIfHeldDown('r⇧', ['r⌘⌥']),
     mapSimultaneous(['l', 'k', 'j']).toIfHeldDown('r⌃', ['r⌘⌥']),
-    //
     // Two - right hand
     mapSimultaneous([';', 'l'], { key_down_order: 'strict' })
       .toIfAlone(';')
@@ -257,7 +249,6 @@ export function homeRowMod() {
       .toIfAlone('j')
       .toIfAlone('k')
       .toIfHeldDown('r⌥', 'r⌘'),
-    //
     // One - right hand
     map(';')
       .toIfAlone(';', {}, { halt: true })
