@@ -1,4 +1,4 @@
-# My Karbiner config
+# My Karbiner config for Home Row Mods
 
-- Run `npm run dev` and copy config from the browser.
-- Run `npm run build` and copy config from `./karabiner.json`.
+- Method#1: Run `npm run dev` and copy config from the browser.
+- Method#2: Run `npm run build` and copy config from `./karabiner.json`.
